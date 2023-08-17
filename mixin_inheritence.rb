@@ -1,5 +1,3 @@
-# Mixins and Inheritance Combined:
-
 module Swimmer
     def swim
       "Swimming..."
@@ -11,6 +9,10 @@ module Swimmer
   
   class Fish < Animal
     include Swimmer
+  
+    def breathe
+      " water..."
+    end
   end
   
   class Mammal < Animal
@@ -18,11 +20,17 @@ module Swimmer
   
   class Dolphin < Mammal
     include Swimmer
+  
+    def speak
+      "Hello!"
+    end
   end
   
   fish = Fish.new
-  puts fish.swim  
+  puts fish.swim
+  puts fish.breathe
   
   dolphin = Dolphin.new
-  puts dolphin.swim  
+  puts dolphin.swim
+  puts dolphin.speak
   

@@ -15,5 +15,15 @@ class MyClass
   end
   
   obj = MyClass.new
-  obj.my_attribute = "Hello, Class Macro!"
+  obj.my_attribute = "Hello, Joo!"
   puts obj.show_attribute  
+
+  class Macros
+  end
+  
+  Macros.define_method(:dynamic_method) do |name|
+    puts "Hello, #{name}!"
+  end
+  
+  obj = Macros.new
+  obj.dynamic_method("John")
